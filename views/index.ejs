@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/app.js"></script>
+    <!--Scroll reveal CDN-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav>
+          <div class="nav-brand">
+            <a href="index.html"><img src="./images/logo.svg" alt="logo" /></a>
+          </div>
+
+          <div class="hamburger-menu">
+            <ion-icon name="menu-outline" class="open-menu"></ion-icon>
+          </div>
+
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Price</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Resources</a></li>
+
+            <div class="nav-btn--mobile">
+              <a href="#" class="btn btn-secondary">Login</a>
+              <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+          </ul>
+
+          <div class="nav-btn--desktop">
+            <a href="#" class="btn btn-secondary">Login</a>
+            <a href="#" class="btn btn-primary">Sign Up</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!------------------------- Hero Section ------------------------->
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-contentImg">
+            <img src="./images/illustration-working.svg" alt="" />
+          </div>
+          <div class="hero-contentDetails">
+            <h1>More than just shorter links</h1>
+            <p>
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <a href="#" class="btn btn-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------- URL Shortner Section ------------------------->
+
+    <section class="shortner-section">
+      <div class="container">
+        <div class="shortner">
+          <form action="/shortUrls" method="POST">
+            <input
+              type="url"
+              name="fullUrl"
+              id="fullUrl"
+              placeholder="Shorten a link here..."
+              required
+            />
+            <p class="warning-message">Please add a link</p>
+            <button type="submit" class="btn btn-primary">Shorten It!</button>
+          </form>
+        </div>
+
+        <% shortUrls.forEach((shortUrl) => { %>
+        <div class="shorted-url">
+          <p class="full-urlLink">
+            <a href="<%= shortUrl.full %>" target="_blank"
+              ><%= shortUrl.full %></a
+            >
+          </p>
+          <hr />
+          <p class="short-urlLink">
+            <a href="<%= shortUrl.short %>" target="_blank"
+              ><%= shortUrl.short %></a
+            >
+          </p>
+          <a href="#" class="btn btn-primary">Copy</a>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <!------------------------- Features Section ------------------------->
+    <section class="feature-section">
+      <div class="container">
+        <div class="feature-headline">
+          <h1>Advanced Statistics</h1>
+          <p>
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
+
+        <div class="grid-container">
+          <!-- Grid Item #1 -->
+          <div class="grid-item">
+            <img src="./images/icon-brand-recognition.svg" alt="icon" />
+            <h3>Brand Recognition</h3>
+            <p>
+              Boost your brand recognition with each click. Generic links don’t
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </p>
+          </div>
+          <!-- Grid Item #2 -->
+          <div class="grid-item">
+            <img src="./images/icon-detailed-records.svg" alt="icon" />
+            <h3>Detailed Records</h3>
+            <p>
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
+            </p>
+          </div>
+          <!-- Grid Item #3 -->
+          <div class="grid-item">
+            <img src="./images/icon-fully-customizable.svg" alt="icon" />
+            <h3>Fully Customizable</h3>
+            <p>
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------- Boost Links Section ------------------------->
+
+    <section class="boost-links animate-bottom">
+      <div class="books-linksContent">
+        <h1>Boost your links today</h1>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <!------------------------- Footer Section ------------------------->
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Grid Item #1 -->
+          <div class="footer-gridItem">
+            <img
+              src="./images/logo - Copy.svg"
+              class="footer-logo"
+              alt="logo"
+            />
+          </div>
+          <!-- Grid Item #2 -->
+          <div class="footer-gridItem">
+            <h3>Features</h3>
+            <ul>
+              <li><a href="#">Link Shortening</a></li>
+              <li><a href="#">Branded Links</a></li>
+              <li><a href="#">Analytics</a></li>
+            </ul>
+          </div>
+          <!-- Grid Item #3 -->
+          <div class="footer-gridItem">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+          <!-- Grid Item #4 -->
+          <div class="footer-gridItem">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Grid Item #5 -->
+          <div class="footer-gridItem">
+            <img src="./images/icon-facebook.svg" alt="fb-icon" />
+            <img src="./images/icon-twitter.svg" alt="twitter-icon" />
+            <img src="./images/icon-pinterest.svg" alt="pintrest-icon" />
+            <img src="./images/icon-instagram.svg" alt="instagram-icon" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!------------------- ION ICONS ----------------->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+  </body>
+</html>
